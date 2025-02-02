@@ -9,6 +9,21 @@ public class Program
 		RunTests(); // I use this to Run the test cases and verify the MergeIntervals function
 	}
 
+	// ----------------This is the main Solution---------------- //
+	/// <summary>
+	/// Merges overlapping intervals in a given list of intervals.
+	/// </summary>
+	/// <param name="intervals">A 2D array of intervals where each interval is represented as [start, end].</param>
+	/// <returns>A 2D array of non-overlapping merged intervals.</returns>
+	/// <remarks>
+	/// The method first sorts the intervals by their start times. Then, it iterates through the intervals,
+	/// merging overlapping ones by adjusting their end times. If no overlap is found, the interval is added
+	/// as a new entry in the result.
+	/// </remarks>
+	/// <example>
+	/// Input: [[1, 3], [2, 6], [8, 10], [15, 18]]
+	/// Output: [[1, 6], [8, 10], [15, 18]]
+	/// </example>
 	public static int[][] MergeIntervals(int[][] intervals)
 	{
 		// null or empty check, return an empty array

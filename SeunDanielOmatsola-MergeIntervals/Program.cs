@@ -4,7 +4,7 @@ using System.Linq;
 
 public class Program
 {
-	public static void Main(string[] args)
+	public static void Main(string[] _)
 	{
 		RunTests(); // I use this to Run the test cases and verify the MergeIntervals function
 	}
@@ -12,7 +12,7 @@ public class Program
 	public static int[][] MergeIntervals(int[][] intervals)
 	{
 		// null or empty check, return an empty array
-		if (intervals == null || intervals.Length == 0) return new int[0][];
+		if (intervals == null || intervals.Length == 0) return [];
 
 		// Sort the intervals based on the start time
 		Array.Sort(intervals, (a, b) => a[0].CompareTo(b[0]));
@@ -53,19 +53,19 @@ public class Program
 	{
 		var testCases = new List<int[][]>
 		{
-			new int[][] { new int[] {1, 3}, new int[] {2, 6}, new int[] {8, 10}, new int[] {15, 18} },
-			new int[][] { new int[] {1, 4}, new int[] {4, 5} },
-			new int[][] { new int[] {5, 10}, new int[] {1, 3}, new int[] {2, 6}, new int[] {15, 18} },
-			new int[][] { new int[] {1, 2}, new int[] {3, 4}, new int[] {5, 6} },
-			Array.Empty<int[]>()
+			new int[][] { [1, 3], [2, 6], [8, 10], [15, 18] },	// test 1
+			new int[][] { [1, 4], [4, 5] },						// test 2
+			new int[][] { [5, 10], [1, 3], [2, 6], [15, 18] },	// test 3
+			new int[][] { [1, 2], [3, 4], [5, 6] },				// test 4
+			Array.Empty<int[]>()								// test 5
 		};
 
 		var expectedResults = new List<int[][]>
 		{
-			new int[][] { new int[] {1, 6}, new int[] {8, 10}, new int[] {15, 18} },
-			new int[][] { new int[] {1, 5} },
-			new int[][] { new int[] {1, 10}, new int[] {15, 18} },
-			new int[][] { new int[] {1, 2}, new int[] {3, 4}, new int[] {5, 6} },
+			new int[][] { [1, 6], [8, 10], [15, 18] },
+			new int[][] { [1, 5] },
+			new int[][] { [1, 10], [15, 18] },
+			new int[][] { [1, 2], [3, 4], [5, 6] },
 			Array.Empty<int[]>()
 		};
 
